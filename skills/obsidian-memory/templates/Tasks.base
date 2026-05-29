@@ -1,0 +1,44 @@
+filters: file.hasTag("task") && file.basename == "task"
+formulas:
+  task_link: link(file.path, file.basename)
+properties:
+  formula.task_link:
+    displayName: Task
+  task_id:
+    displayName: Task ID
+  short_description:
+    displayName: Summary
+  work_branch:
+    displayName: Work Branch
+  status:
+    displayName: Status
+  base_branch:
+    displayName: Base
+  created:
+    displayName: First Created
+  last_updated:
+    displayName: Last Updated
+views:
+  - type: table
+    name: All Tasks
+    order:
+      - formula.task_link
+      - task_id
+      - short_description
+      - work_branch
+      - status
+      - base_branch
+      - created
+      - last_updated
+  - type: table
+    name: Active Tasks
+    filters: status != "done"
+    order:
+      - formula.task_link
+      - task_id
+      - short_description
+      - work_branch
+      - status
+      - base_branch
+      - created
+      - last_updated
