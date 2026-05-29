@@ -25,13 +25,13 @@ The user chooses where the vault lives. The skill does not create a hidden defau
 Install the memory skill from the public GitHub repo:
 
 ```bash
-npx skills add <owner>/<repo> --skill obsidian-memory
+npx skills add TawfiqAbubaker/obsidian-memory --skill obsidian-memory
 ```
 
 Install every skill in the repo:
 
 ```bash
-npx skills add <owner>/<repo>
+npx skills add TawfiqAbubaker/obsidian-memory
 ```
 
 During local development, you can inspect the skills the CLI sees:
@@ -47,7 +47,7 @@ Choose the folder you want to use as your memory vault. It can be an existing Ob
 Tell your agent:
 
 ```text
-Use obsidian-memory and initialize my memory vault at /path/to/my/ObsidianVault.
+$obsidian-memory initialize my memory vault at /path/to/my/ObsidianVault.
 ```
 
 The initializer creates the missing memory files in that folder and records the chosen path in:
@@ -69,7 +69,7 @@ Open the same folder in Obsidian to preview task notes and `Tasks.base`.
 Start a task with:
 
 ```text
-Use obsidian-memory for this task.
+$obsidian-memory new task
 ```
 
 If this work belongs to an existing task note, give the `task_id`. Otherwise, describe the task and the agent will create a new note. If the branch matters, provide `work_branch` and `base_branch`. If other tasks are related, tell the agent which ones are related.
